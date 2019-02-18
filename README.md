@@ -1,1 +1,1 @@
-Repository for the codes from the Machine Learning undergraduate course at FGV (2019)
+Code repository for the undergraduate Machine Learning course at FGV (2019).
