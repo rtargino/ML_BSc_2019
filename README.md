@@ -5,7 +5,7 @@ Code repository for the undergraduate Machine Learning course at FGV
 
 ## How to colaborate
 
-If you want to collaborate create a pull request. It is important:
+If you want to collaborate create a pull request, do not forget to:
 
 	- choose good names for your files
 	
