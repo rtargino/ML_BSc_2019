@@ -69,6 +69,9 @@ def find_separator(negative, positive, w = [1,1,1]):
     positives : list od binary tuples
       the data classified with +1 by the linear separator_function
     
+    w: list
+      perceptron init value
+    
     """
     positives_x1 = list(map(lambda x: x[0], positive))
     positives_y = list(map(lambda x: x[1], positive))
