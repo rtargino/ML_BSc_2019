@@ -41,7 +41,8 @@ class data():
             counter = 0
             for data in result:
                 counter += data.y
-            return int(counter > k / 2)
+            self.guess = int(counter > k / 2)
+            return self.guess
 
 class DataLearned():
     def __init__(self, list):
