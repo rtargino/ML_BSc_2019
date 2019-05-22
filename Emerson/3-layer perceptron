@@ -1,0 +1,51 @@
+
+# coding: utf-8
+
+# In[33]:
+
+
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+
+# In[50]:
+
+
+def threelayerperceptron_circulo(v):
+    
+    "v é um vetor (x,y)"
+    
+    x=np.array([1,v[0],v[1]])
+    
+    w1=np.array([1,0,-1]) #if y>1: w.Tx<0
+    w2=np.array([1,0,1])  #if y<-1: w.Tx<0
+    w3=np.array([1,-1,0]) # if x>1: w.Tx<0
+    w4=np.array([1,1,0])  # if x<-1: w.Tx<0
+    
+    #Classificando o x para cada perceptron:
+    
+    h1=sign(np.matmul(w1.T,x)) 
+    h2=sign(np.matmul(w2.T,x))
+    h3=sign(np.matmul(w3.T,x))
+    h4=sign(np.matmul(w4.T,x))
+    
+    #Requerindo que o ponto seja classificado como +1 em todos os quatro perceptrons:
+    
+    f=sign(-3.5+h1+h2+h3+h4)
+   
+    return f
+
+
+# In[65]:
+
+
+x = np.random.uniform(-2,2,250)
+y = np.random.uniform(-2,2,250)
+
+pontos = list(zip(x,y))
+
+classificacao=[threelayerperceptron_circulo(p) for p in pontos]
+
+plt.scatter(x,y,c=classificacao)
+
