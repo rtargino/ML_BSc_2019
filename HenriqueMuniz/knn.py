@@ -6,12 +6,6 @@ import random
 class KNNRegression():
 
     def __init__(self, data, k=1, distanceFn=utils.my_euclidian_dist, condense=False, e=None):
-        '''
-        Parameters
-        ----------
-        k : The K-NN  according to the majority class among the k nearest data points to x
-        data : A list of list, each list must be a
-        '''
         def apply_condensation(data, e):
             def index_nearest_point(point, data):
                 min_dist = float("inf")
