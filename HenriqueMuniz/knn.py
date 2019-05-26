@@ -3,7 +3,7 @@ import numpy
 import random
 
 
-class knn_regression():
+class KNNRegression():
 
     def __init__(self, data, k=1, distanceFn=utils.my_euclidian_dist, condense=False, e=None):
         '''
@@ -21,7 +21,7 @@ class knn_regression():
                         min_dist = dist
                         index = i
                 return index
-            full_model = knn_regression(data, k=k)
+            full_model = KNNRegression(data, k=k)
             D = data.copy()
             S = []
             for i in range(k):
@@ -30,7 +30,7 @@ class knn_regression():
 
             ready = False
             while not ready:
-                aux_model = knn_regression(S, k=k)
+                aux_model = KNNRegression(S, k=k)
                 misclassiy = []
 
                 for i in range(len(data)):
@@ -64,10 +64,13 @@ class knn_regression():
         aux = []
         for i in self.data:
             dist_i_x = self.distanceFn(i[:-1], x)
+
             if len(aux) < self.k:
-                aux = utils.insert(aux, (dist_i_x, i))
+                aux = utils.insert(aux, (dist_i_x, i),
+                                   acessorFn=lambda x: x[0])
             else:
-                aux = utils.insert(aux, (dist_i_x, i))
+                aux = utils.insert(aux, (dist_i_x, i),
+                                   acessorFn=lambda x: x[0])
                 aux.pop()
 
         return numpy.mean([x[1][-1] for x in aux])
@@ -79,7 +82,7 @@ if __name__ == "__main__":
     train_data = [(numpy.array([x]), x ** 2)
                   for x in numpy.arange(0., 1., 0.1)]
 
-    model = knn_regression(train_data, k=2)
+    model = KNNRegression(train_data, k=2)
 
     test_data = [numpy.array([random.uniform(0, 1)])
                  for i in range(4)]
@@ -97,7 +100,7 @@ if __name__ == "__main__":
     plt.show()
 
     train_data = [(numpy.array(x), x ** 2) for x in numpy.arange(0., 1., 0.02)]
-    model = knn_regression(train_data, k=1, condense=True, e=0.1)
+    model = KNNRegression(train_data, k=1, condense=True, e=0.1)
 
     plt.plot([train_data[i][0] for i in range(len(train_data))],
              [train_data[i][1] for i in range(len(train_data))],
