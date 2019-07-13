@@ -64,7 +64,7 @@ def my_euclidian_dist(point1, point2):
     return numpy.linalg.norm(point1 - point2)
 
 
-def greedy_initialization_lloyd(data, k):
+def greedy_initialization_lloyd(data, k, distanceFn):
     aux_data = data.copy()
     x = aux_data.pop(random.randrange(len(aux_data)))[0]
     result = [x]
@@ -76,7 +76,7 @@ def greedy_initialization_lloyd(data, k):
         for j in range(len(aux_data)):
             dist = 0
             for point in result:
-                dist = dist + my_euclidian_dist(point, aux_data[j][0])
+                dist = dist + distanceFn(point, aux_data[j][0])
 
             if dist > max_dist:
                 max_dist = dist
