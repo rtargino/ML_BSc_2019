@@ -1,0 +1,96 @@
+clump_thickness
+count    699.000000
+mean       4.417740
+std        2.815741
+min        1.000000
+25%        2.000000
+50%        4.000000
+75%        6.000000
+max       10.000000
+Name: clump_thickness, dtype: float64
+ 
+unif_cel_size
+count    699.000000
+mean       3.134478
+std        3.051459
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        5.000000
+max       10.000000
+Name: unif_cel_size, dtype: float64
+ 
+unif_cel_shape
+count    699.000000
+mean       3.207439
+std        2.971913
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        5.000000
+max       10.000000
+Name: unif_cel_shape, dtype: float64
+ 
+marg_adhesion
+count    699.000000
+mean       2.806867
+std        2.855379
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        4.000000
+max       10.000000
+Name: marg_adhesion, dtype: float64
+ 
+single_epith_cell_size
+count    699.000000
+mean       3.216023
+std        2.214300
+min        1.000000
+25%        2.000000
+50%        2.000000
+75%        4.000000
+max       10.000000
+Name: single_epith_cell_size, dtype: float64
+ 
+bare_nuclei
+count     699
+unique     11
+top         1
+freq      402
+Name: bare_nuclei, dtype: object
+ 
+bland_chrom
+count    699.000000
+mean       3.437768
+std        2.438364
+min        1.000000
+25%        2.000000
+50%        3.000000
+75%        5.000000
+max       10.000000
+Name: bland_chrom, dtype: float64
+ 
+norm_nucleoli
+count    699.000000
+mean       2.866953
+std        3.053634
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        4.000000
+max       10.000000
+Name: norm_nucleoli, dtype: float64
+ 
+mitoses
+count    699.000000
+mean       1.589413
+std        1.715078
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        1.000000
+max       10.000000
+Name: mitoses, dtype: float64
+ 
+
